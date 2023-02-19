@@ -5,9 +5,50 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29udGFjdCUyMHVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/* contacts styling */
+.contact{
+  margin:auto;
+}
+/* header text*/
+.header{
+  margin-left:450px;
+  font-size:50px;
+}
+
+
+/* display field text */
+.field{
+  margin:0px;
+  padding:0px;
+}
+
+/* buttons styling  */
+.button{
+  margin:8px;
+
+}
+
+/* contact container styling */
+.contact-card{
+  border-bottom:1px solid black;
+  width:30%;
+  margin:auto;
+}
+
+.add-contact-btn{
+ 
+  margin-left: 570px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
