@@ -15,7 +15,8 @@ function ContactsList() {
         }
         getData();
     },[]);
-    const handleAdd=({name,email,phone})=>{
+    const handleAdd=(name,email,phone)=>{
+      console.log("name is",email);
        fetch("https://jsonplaceholder.typicode.com/users",{
         method:'POST',
         body:JSON.stringify({
@@ -26,6 +27,7 @@ function ContactsList() {
         headers:{"Content-Type": 'application/json; charset=UTF-8',},
        }).then((response)=>response.json())
        .then((data)=>{setContacts((prevContacts)=>[...prevContacts,data])})
+       setAddingContact(false);
        
       console.log("after",contacts);
     }
@@ -42,11 +44,15 @@ function ContactsList() {
          console.log("after delete",contacts);
     }
     // }
-    const handleUpdate=(id,updatedContact)=>{
+    const handleUpdate=(id,name,email,phone)=>{
       
       fetch(`https://example.com/api/contacts/${id}`, {
       method: "PUT",
-      body: JSON.stringify(updatedContact),
+      body: JSON.stringify({
+        name,
+        email,
+        phone
+      }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -57,7 +63,10 @@ function ContactsList() {
           prevContacts.map((c) => (c.id === id ? data : c))
         );
       });
-      const con=contacts.map((c)=>(c.id===id?updatedContact:c))
+
+      const con=contacts.map((c)=>(c.id===id?{name:name,
+      email:email,
+      phone:phone}:c))
       setContacts(con);
       console.log("after update",contacts);
     }
@@ -76,8 +85,8 @@ function ContactsList() {
     </div>
     {addingContact?(
     <AddContact onAddingContact={handleAdd} />):(
-      <div className="add-contact-btn">
-        <button onClick={()=>{setAddingContact(true)}}>Add Contact</button>
+      <div >
+        <button onClick={()=>{setAddingContact(true)}} className="add-contact-btn">Add</button>
       </div>
     )}
     </div>

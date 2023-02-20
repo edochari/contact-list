@@ -12,6 +12,7 @@ body {
   background-size: cover;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -22,6 +23,7 @@ code {
 }
 /* header text*/
 .header{
+  color:aquamarine;
   margin-left:450px;
   font-size:50px;
 }
@@ -29,6 +31,7 @@ code {
 
 /* display field text */
 .field{
+  color: aliceblue;
   margin:0px;
   padding:0px;
 }
@@ -36,19 +39,36 @@ code {
 /* buttons styling  */
 .button{
   margin:8px;
+  background-color: lightgray;
+  color:black;
 
 }
 
 /* contact container styling */
 .contact-card{
-  border-bottom:1px solid black;
+  
   width:30%;
   margin:auto;
 }
 
-.add-contact-btn{
- 
+/* add contact button */
+
+
+.add-contact-btn {
+  display:block;
   margin-left: 570px;
   margin-top: 20px;
   margin-bottom: 30px;
+  background-color: green;
+  color:white;
+  
+}
+
+/* styling for all fields taking input */
+.input-field{
+  color: brown;
+  display:block;
+  margin-left: 570px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }

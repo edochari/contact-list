@@ -9,8 +9,8 @@ export function Contact (props) {
      setIsEditing(true);
 
     }
-    const handleUpdate=(updatedContact)=>{
-        props.onUpdate(contact.id,updatedContact);
+    const handleUpdate=(name,email,phone)=>{
+        props.onUpdate(contact.id,name,email,phone);
         setIsEditing(false);
     }
     const handleDelete=()=>{
